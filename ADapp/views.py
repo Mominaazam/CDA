@@ -41,32 +41,32 @@ class RoleListCreateAPIView(generics.ListCreateAPIView):
 class RoleRetrieveUpdateAPIView(generics.RetrieveUpdateAPIView):
     queryset = role.objects.all()
     serializer_class = RoleSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 class PermissionListCreateAPIView(generics.ListCreateAPIView):
     queryset = permission.objects.all()
     serializer_class = PermissionSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 class PermissionRetrieveUpdateAPIView(generics.RetrieveUpdateAPIView):
     queryset = permission.objects.all()
     serializer_class = PermissionSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 class InternalUserListCreateAPIView(generics.ListCreateAPIView):
     queryset = Internal_User.objects.all()
     serializer_class = InternalUserSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 class RolePermissionListCreateAPIView(generics.ListCreateAPIView):
     queryset = role_permission.objects.all()
     serializer_class = RolePermissionSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 class MetaUserListCreateAPIView(generics.ListCreateAPIView):
     queryset = user_meta.objects.all()
     serializer_class = MetaUserSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 
 

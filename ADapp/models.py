@@ -34,7 +34,7 @@ class Internal_User(models.Model):
     HashPassword = models.TextField()
     created_at = models.DateTimeField(  default='2024-05-03T01:55:00Z')
     updated = models.DateTimeField(  null=True)
-    
+
     @property
     def is_authenticated(self):
         # Implement authentication logic here
@@ -43,17 +43,13 @@ class Internal_User(models.Model):
 
 
 class user_meta(models.Model):
-    parent = models.ForeignKey(U_user, on_delete=models.CASCADE)
-    id = models.PositiveBigIntegerField(primary_key=True) #max_length=20,
+    used = models.ForeignKey(U_user, on_delete=models.CASCADE)
     key = models.CharField(max_length=75) 
     value = models.CharField(max_length=75)
-    used = models.PositiveBigIntegerField() #max_length=20,
 
 
 
 class permission(models.Model):
-    parent = models.ForeignKey(role, on_delete=models.CASCADE)
-    id = models.PositiveBigIntegerField(primary_key=True) #max_length=20,
     title = models.CharField(max_length=75)
     slug = models.CharField(max_length=100)
     description = models.TextField()
@@ -63,9 +59,8 @@ class permission(models.Model):
 
 
 class role_permission(models.Model):
-    parent = models.ForeignKey(role, on_delete=models.CASCADE)
-    roleId = models.PositiveBigIntegerField() #max_length=20,
-    permissionId = models.PositiveBigIntegerField() #max_length=20,
+    roleId = models.ForeignKey(role, on_delete=models.CASCADE) #max_length=20,
+    permissionId = models.ForeignKey(permission, on_delete=models.CASCADE)
     createdAT = models.DateTimeField()
     updatedAt = models.DateTimeField()
 

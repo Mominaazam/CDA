@@ -36,7 +36,7 @@ class U_userCreateAPIView(generics.ListCreateAPIView):
 class RoleListCreateAPIView(generics.ListCreateAPIView):
     queryset = role.objects.all()
     serializer_class = RoleSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 class RoleRetrieveUpdateAPIView(generics.RetrieveUpdateAPIView):
     queryset = role.objects.all()

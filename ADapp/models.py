@@ -138,7 +138,7 @@ class Sector(models.Model):
 class Society(models.Model):
     Image = models.TextField()
     Name = models.CharField(max_length=255)
-    Created_by = models.PositiveBigIntegerField() #max_length=20,
+    Created_by = models.ForeignKey(Internal_User, on_delete=models.CASCADE) #max_length=20,
     Created_at = models.DateTimeField()
     Updated_at = models.DateTimeField()
 

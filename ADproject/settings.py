@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'ADproject.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'django',  # Your MySQL database name
+#         'NAME': 'cda',  # Your MySQL database name
 #         'USER': 'root',  # Your MySQL username
 #         'PASSWORD': '',  # Your MySQL password
 #         'HOST': 'localhost',

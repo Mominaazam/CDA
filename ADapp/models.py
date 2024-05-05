@@ -72,10 +72,11 @@ class Property_Owner(models.Model):
     Created_at = models.DateTimeField()
     Uploaded_at = models.DateTimeField()
 
+
 class Property_Owner_meta(models.Model):
     Key = models.CharField(max_length=255)
     Value = models.TextField()
-    Owner_ID = models.PositiveBigIntegerField() #max_length=20,
+    Owner_ID = models.ForeignKey(Property_Owner, on_delete=models.CASCADE)
     Edit_by = models.PositiveBigIntegerField() #max_length=20,
 
 class Property(models.Model):

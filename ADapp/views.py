@@ -74,23 +74,23 @@ class MetaUserListCreateAPIView(generics.ListCreateAPIView):
 class PropertyOwnerListCreatAPIView(generics.ListCreateAPIView):
     queryset = Property_Owner.objects.all()
     serializer_class = Property_OwnerSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
         
     
 class PropertyOwnerRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Property_Owner.objects.all()
     serializer_class = Property_OwnerSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 class PropertyOwnermetaListCreateAPIView(generics.ListCreateAPIView):
     queryset = Property_Owner_meta.objects.all()
     serializer_class = Property_Owner_metaSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 class PropertyOwnermetaRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Property_Owner_meta.objects.all()
     serializer_class = Property_Owner_metaSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 
 class PropertyListCreateAPIView(generics.ListCreateAPIView):

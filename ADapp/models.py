@@ -72,10 +72,11 @@ class Property_Owner(models.Model):
     Created_at = models.DateTimeField()
     Uploaded_at = models.DateTimeField()
 
+
 class Property_Owner_meta(models.Model):
     Key = models.CharField(max_length=255)
     Value = models.TextField()
-    Owner_ID = models.PositiveBigIntegerField() #max_length=20,
+    Owner_ID = models.ForeignKey(Property_Owner, on_delete=models.CASCADE)
     Edit_by = models.PositiveBigIntegerField() #max_length=20,
 
 class Property(models.Model):
@@ -136,7 +137,7 @@ class Sector(models.Model):
 class Society(models.Model):
     Image = models.TextField()
     Name = models.CharField(max_length=255)
-    Created_by = models.PositiveBigIntegerField() #max_length=20,
+    Created_by = models.ForeignKey(Internal_User, on_delete=models.CASCADE) #max_length=20,
     Created_at = models.DateTimeField()
     Updated_at = models.DateTimeField()
 

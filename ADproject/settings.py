@@ -87,29 +87,29 @@ WSGI_APPLICATION = 'ADproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'django',  # Your MySQL database name
-#         'USER': 'root',  # Your MySQL username
-#         'PASSWORD': '',  # Your MySQL password
-#         'HOST': 'localhost',
-#         'PORT': '3306',  # MySQL default port
-#     }
-# }
-
-
-import os
-
-# Make sure DATABASE_URL is set in your environment
-os.environ.setdefault('DATABASE_URL', 'postgres://avnadmin:AVNS_kec8E2WSZoEVp-o5lt0@pg-2c318de-harrykennedy-23b8.g.aivencloud.com:28088/defaultdb?sslmode=require')
-
-# Now you can use this config
-import dj_database_url
-
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django',  # Your MySQL database name
+        'USER': 'root',  # Your MySQL username
+        'PASSWORD': '',  # Your MySQL password
+        'HOST': 'localhost',
+        'PORT': '3306',  # MySQL default port
+    }
 }
+
+
+# import os
+
+# # Make sure DATABASE_URL is set in your environment
+# os.environ.setdefault('DATABASE_URL', 'postgres://avnadmin:AVNS_kec8E2WSZoEVp-o5lt0@pg-2c318de-harrykennedy-23b8.g.aivencloud.com:28088/defaultdb?sslmode=require')
+
+# # Now you can use this config
+# import dj_database_url
+
+# DATABASES = {
+#     'default': dj_database_url.config()
+# }
 
 # import os
 

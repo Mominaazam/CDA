@@ -7,7 +7,7 @@ urlpatterns = [
 
     path('U_user/',  U_userCreateAPIView.as_view(), name='U_user-list-create'),
     path('roles/', RoleListCreateAPIView.as_view(), name='role-list-create'),
-    path('roles/<int:pk>/', RoleRetrieveUpdateAPIView.as_view(), name='role-detail-update'),
+    path('roles/<int:pk>/', RoleRetrieveUpdateDestroyAPIView.as_view(), name='role-detail-delete'),
     path('permissions/', PermissionListCreateAPIView.as_view(), name='permission-list-create'),
     path('permissions/<int:pk>/', PermissionRetrieveUpdateAPIView.as_view(), name='permissions-detail-update'),
     path('internal/users/', InternalUserListCreateAPIView.as_view(), name='internaluser-list-create'),

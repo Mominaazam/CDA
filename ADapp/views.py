@@ -31,14 +31,15 @@ def generate_hashed_password(request):
 class U_userCreateAPIView(generics.ListCreateAPIView):
     queryset = U_user.objects.all()
     serializer_class = U_userSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 class RoleListCreateAPIView(generics.ListCreateAPIView):
     queryset = role.objects.all()
     serializer_class = RoleSerializer
     permission_classes = [IsAuthenticated]
 
-class RoleRetrieveUpdateAPIView(generics.RetrieveUpdateAPIView):
+
+class RoleRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = role.objects.all()
     serializer_class = RoleSerializer
     permission_classes = [IsAuthenticated]
@@ -48,7 +49,7 @@ class PermissionListCreateAPIView(generics.ListCreateAPIView):
     serializer_class = PermissionSerializer
     permission_classes = [IsAuthenticated]
 
-class PermissionRetrieveUpdateAPIView(generics.RetrieveUpdateAPIView):
+class PermissionRetrieveUpdateAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = permission.objects.all()
     serializer_class = PermissionSerializer
     permission_classes = [IsAuthenticated]
